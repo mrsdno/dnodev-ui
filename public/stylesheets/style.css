@@ -4,8 +4,13 @@
   --clr-secondary-200: hsl(30, 38%, 92%);
 
   --clr-neutral-900: hsl(212, 21%, 14%);
-  --clr-nuertal-400: hsl(228, 12%, 48%);
+  --clr-neurtal-400: hsl(228, 12%, 48%);
   --clr-neutral-100: hsl(0, 0%, 100%);
+
+  --teal: rgb(78, 115, 110);
+  --yellow: rgb(217,165,58);
+  --purple: rgb(44,33,90);
+  --red: rgb(190,30,45);
 
   --fw-regular: 500;
   --fw-bold: 700;
@@ -96,7 +101,7 @@ body {
   font-family: var(--ff-base);
   font-weight: var(--fw-regular);
   font-size: 0.875rem;
-  color: var(--clr-nuertal-400);
+  color: var(--clr-neurtal-400);
   background-color: var(--clr-secondary-200);
   max-width: 1100px;
   margin: auto;
@@ -188,27 +193,66 @@ header .button {
   text-align: right;
 }
 
-.copy-statement {
+.projects {
+  min-height: 100%;
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.projects > section {
+  display: flex;
+  flex-basis: calc(50% - 40px);
+  justify-content: center;
+  flex-direction: column;
+}
+
+.projects > section > div {
+  display: flex;
+  justify-content: center;
+}
+
+.project-title {
+  font-size: 3rem;
+  color: var(--clr-primary-900);
+  font-weight: 700;
+  text-align: center;
+  margin: 3rem;
+}
+.project {
+  margin: 1rem;
+  font-size: 1.5rem;
+  min-height: 400px;
+  flex-direction: column;
   align-items: center;
-  font-size: 2rem;
-  margin: 4rem;
-  background-image: url("/images/blob2.svg");
+  background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
-
 }
 
-.developer-close-up {
-  background-color: var(--clr-primary-400);
+.project a {
+  text-decoration: none;
   color: var(--clr-neutral-100);
-  font-size: 4rem;
-  display: flex;
-  padding: 5rem 4rem 0rem 2rem;
-  align-items: center;
-  justify-content: space-around;
+  font-weight: 900;
 }
 
-.close-up-picture {
-  width: 200px;
+.project a:hover {
+  color: var(--clr-neutral-900);
+}
+
+.style1 {
+  background-image: url("/images/blob2.svg");
+
+}
+
+.style2 {
+  background-image: url("/images/blob3.svg");
+}
+
+.style3 {
+  background-image: url("/images/blob4.svg");
+}
+
+.style4 {
+  background-image: url("/images/blob5.svg");
 }
