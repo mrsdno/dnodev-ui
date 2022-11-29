@@ -1,3 +1,5 @@
+// thank you https://georgefrancis.dev/writing/build-a-smooth-animated-blob-with-svg-and-js/ for the guidance on creating these blobs
+
 import { spline } from "https://cdn.skypack.dev/@georgedoescode/spline@1.0.1";
 import SimplexNoise from "https://cdn.skypack.dev/simplex-noise@2.4.0";
 
