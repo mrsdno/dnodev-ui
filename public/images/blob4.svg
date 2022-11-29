@@ -1,3 +1,11 @@
-<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-  <path fill="#D9A53A" d="M53.2,-61.7C65.9,-52.9,70.8,-33.1,73.9,-13.4C76.9,6.3,78,26,69,38.2C60,50.5,40.9,55.2,24.9,55.5C8.8,55.8,-4.2,51.7,-18.1,47.6C-32,43.5,-46.6,39.4,-53.2,29.9C-59.7,20.3,-58,5.2,-56.9,-11.6C-55.8,-28.4,-55.3,-46.8,-45.9,-56.2C-36.5,-65.7,-18.2,-66.2,1,-67.5C20.3,-68.7,40.6,-70.6,53.2,-61.7Z" transform="translate(100 100)" />
+<svg viewBox="0 0 200 200">
+  <defs>
+    <!-- Our gradient fill #gradient -->
+    <linearGradient id="gradient" gradientTransform="rotate(90)">
+      <!-- Use CSS custom properties for the start / stop colors of the gradient -->
+      <stop id="gradientStop1" offset="0%" stop-color="var(--startColor)" />
+      <stop id="gradientStop2 " offset="100%" stop-color="var(--stopColor)" />
+    </linearGradient>
+  </defs>
+  <path d="" fill="url('#gradient')"></path>
 </svg>

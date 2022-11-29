@@ -7,10 +7,10 @@
   --clr-neurtal-400: hsl(228, 12%, 48%);
   --clr-neutral-100: hsl(0, 0%, 100%);
 
-  --teal: rgb(78, 115, 110);
-  --yellow: rgb(217,165,58);
-  --purple: rgb(44,33,90);
-  --red: rgb(190,30,45);
+  --teal: hsl(172, 19%, 38%);
+  --yellow: hsl(40, 68%, 54%);
+  --purple: rgb(44, 33, 90);
+  --red: rgb(190, 30, 45);
 
   --fw-regular: 500;
   --fw-bold: 700;
@@ -88,6 +88,12 @@ h3 {
   line-height: 1;
 }
 
+svg {
+  /* a perfectly square <svg> element that will never overflow the viewport */
+  width: 90vmin;
+  height: 90vmin;
+}
+
 /* utility */
 .fun-text {
   font-family: var(--ff-accent);
@@ -153,7 +159,6 @@ header .button {
 
 .landing {
   height: 1000px;
-  background-image: url("/images/blob1.svg");
   color: var(--clr-neutral-900);
   display: flex;
   flex-direction: column;
@@ -162,8 +167,20 @@ header .button {
   font-size: 5rem;
 }
 
+.landing-text {
+  position: absolute;
+}
+
+.landing-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
 @media (max-width: 1060px) {
-  .landing{
+  .landing {
     font-size: 3rem;
   }
 }
@@ -219,15 +236,18 @@ header .button {
   text-align: center;
   margin: 3rem;
 }
+
 .project {
   margin: 1rem;
   font-size: 1.5rem;
-  min-height: 400px;
+  max-height: 400px;
   flex-direction: column;
   align-items: center;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
+  position: relative;
+}
+
+.project .overlay {
+  position: absolute;
 }
 
 .project a {
@@ -238,21 +258,4 @@ header .button {
 
 .project a:hover {
   color: var(--clr-neutral-900);
-}
-
-.style1 {
-  background-image: url("/images/blob2.svg");
-
-}
-
-.style2 {
-  background-image: url("/images/blob3.svg");
-}
-
-.style3 {
-  background-image: url("/images/blob4.svg");
-}
-
-.style4 {
-  background-image: url("/images/blob5.svg");
 }
