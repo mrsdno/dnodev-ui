@@ -25,7 +25,7 @@ app.use('/users', usersRouter);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
-
+app.use('/favicon.ico', express.static('images/favicon.ico'));
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
