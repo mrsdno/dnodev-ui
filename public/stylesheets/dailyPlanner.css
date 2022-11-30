@@ -48,16 +48,19 @@ li {
   border: 1px solid var(--clr-neutral-900);
   width: 94%;
   margin-top: 0.25rem;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
 }
 
 .column__input {
   width: 94%;
   height: 2.5rem;
   border: 1px solid var(--clr-neutral-900);
+
 }
 
 .column__button {
-  width: 6%;
+  width: 4%;
   background: none;
   color: inherit;
   border: none;
