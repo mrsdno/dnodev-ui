@@ -35,11 +35,21 @@ for (i = 0; i < close.length; i++) {
 
 // cross out item when you click on i
 var list = document.querySelector("ul");
-list.addEventListener(
+taskListEl.addEventListener(
   "click",
   function (ev) {
     if (ev.target.tagName === "LI") {
       ev.target.classList.toggle("checked");
+    }
+  },
+  false
+);
+
+routineListEl.addEventListener(
+  "click",
+  function (ev) {
+    if (ev.target.tagName === "LI") {
+      ev.target.classList.toggle("green");
     }
   },
   false
