@@ -16,13 +16,25 @@ let week = weekdays[weekNum];
 
 let dateHeaderEl = document.getElementById("date-header");
 
+let journalDateHeaderEl = document.getElementById("journal-date-header");
+
 function dailyPlannerHeader() {
   let dateHeaderText =
     week.substring(0, 3) + " " + month + " " + day + "/" + year2;
   let dateContent = document.createElement("p");
-    dateContent.textContent = dateHeaderText;
+  dateContent.textContent = dateHeaderText;
 
   dateHeaderEl.appendChild(dateContent);
 }
+
+function dailyJournalHeader() {
+  let dateJournalText = day + " " + month + "-" + week.substring(0, 3);
+  let dateContent = document.createElement("p");
+  dateContent.textContent = dateJournalText;
+
+  journalDateHeaderEl.appendChild(dateContent);
+}
+
+dailyJournalHeader();
 
 dailyPlannerHeader();

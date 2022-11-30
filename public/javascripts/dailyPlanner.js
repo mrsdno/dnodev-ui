@@ -210,7 +210,7 @@ function loadSaved() {
 
           // remove item from local storage
           var deleteItem = div.innerText.slice("0", "-1");
-          var routineArray = localStorage.getItem("to-do").split(",");
+          var routineArray = localStorage.getItem("routines").split(",");
           var routineIndex = routineArray.indexOf(deleteItem);
           routineArray.splice(routineIndex, 1);
           console.log(routineArray);

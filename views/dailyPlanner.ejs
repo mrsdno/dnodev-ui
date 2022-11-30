@@ -36,7 +36,9 @@
   <body>
     <header>
       <picture class="logo">
-        <img src="/images/logo.png" />
+                <a href="/">
+          <img src="/images/logo.png" />
+        </a>
       </picture>
       <a
         class="button"
@@ -62,7 +64,7 @@
       </div>
 
       <div class="journal">
-        <div class="journal__date">28 NOV-MON</div>
+        <div class="journal__date" id="journal-date-header"></div>
           <div class="journal__content" id="journal-input"><p id="editableP" contentEditable="true"></p></div>
           <button id="save-journal" class="journal__button">save</button>
         </div>
