@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>dno.dev: having fun. creating applications. together.</title>
+
+    <!--meta properties-->
+    <meta
+      property="og:title"
+      content="dno.dev: having fun. creating applications. together."
+    />
+    <meta property="og:type" content="movie" />
+    <meta property="og:url" content="http://www.dno.dev" />
+    <meta property="og:image" content="https://dno.dev/images/logo.png" />
+    <meta property="og:site_name" content="dno.dev" />
+    <meta
+      property="og:description"
+      content="A husband and wife web development team who are just having fun, working together to create fun software applications."
+    />
+
+    <!--google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--favicons-->
+    <link rel="icon" type="image/png" href="/images/favicon.ico" />
+
+    <!--custom css-->
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/dailyPlanner.css" />
+  </head>
+
+  <body>
+    <header>
+      <picture class="logo">
+        <img src="/images/logo.png" />
+      </picture>
+      <a
+        class="button"
+        id="contact-us"
+        href="mailto:christine@dno.dev?subject=I'm reaching out from your site!"
+        >contact us</a
+      >
+    </header>
+
+    <div class="main__page">
+      <div class="date">Monday Nov 28 / 22</div>
+      <div class="to__dos">
+        <div class="to__do__title">To Dos</div>
+        <ul class="to__do__items" id="to-do-items">
+          <input id="to-do-input"></input><button id="add-task">+</button>
+        </ul>
+      </div>
+
+      <div class="routines">
+        <div class="routine__title">Routine</div>
+        <ul class="routine__items" id="routine-items">
+          <input id="routine-input"></input><button id="new-routine">+</button>
+        </ul>
+      </div>
+
+      <div class="journal">
+        <div class="journal__date">28 NOV-MON</div>
+          <input class="journal__content" id="journal-input"></input>
+          <button id="save-journal">save</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/javascripts/dailyplanner.js"></script>
+  </body>
+</html>
