@@ -1,14 +1,15 @@
 import Express from "express"
+import path from "path";
 const router = Express.Router();
 
 /* GET home page */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'dno.dev' });
+  res.sendFile(path.join(__dirname, "../views/index.html"));
 });
 
 /* GET daily planner */
 router.get('/dailyplanner', function (req, res, next) {
-  res.render("dailyplanner", { title: 'A daily planner by Christine DNO' });
+  res.sendFile(path.join(__dirname, "../views/dailyPlanner.html"));
 })
 
 export{ router};
