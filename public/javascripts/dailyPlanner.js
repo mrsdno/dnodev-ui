@@ -1,13 +1,13 @@
 // set global variables
-var toDoTasks = {
+const toDoTasks = {
   tasks: [],
 };
 
-var routineItems = {
+const routineItems = {
   items: [],
 };
 
-var journal = {
+const journal = {
   journals: {
     date: "",
     text: ""
@@ -15,26 +15,26 @@ var journal = {
 };
 
 // set up buttons/listeners
-var addTaskBtn = document.querySelector("#add-task");
-var saveJournalBtn = document.querySelector("#save-journal");
-var newRoutineBtn = document.querySelector("#new-routine");
-var taskListEl = document.querySelector("#to-do-items");
-var routineListEl = document.querySelector("#routine-items");
+const addTaskBtn = document.querySelector("#add-task");
+const saveJournalBtn = document.querySelector("#save-journal");
+const newRoutineBtn = document.querySelector("#new-routine");
+const taskListEl = document.querySelector("#to-do-items");
+const routineListEl = document.querySelector("#routine-items");
 
 
 // create delete button and add to each item (for new item)
-var close = document.getElementsByClassName("close");
-var i;
+const close = document.getElementsByClassName("close");
+const i;
 for (i = 0; i < close.length; i++) {
   close[i].onclick = function () {
     // set display to none
-    var div = this.parentElement;
+    const div = this.parentElement;
     div.style.display = "none";
   };
 }
 
 // cross out item when you click on i
-var list = document.querySelector("ul");
+const list = document.querySelector("ul");
 taskListEl.addEventListener(
   "click",
   function (ev) {
@@ -57,12 +57,12 @@ routineListEl.addEventListener(
 
 // create new list item when you click the add button
 function newElement() {
-  var newLi = document.createElement("li");
-  var toDoValue = document.getElementById("to-do-input").value;
-  var routineValue = document.getElementById("routine-input").value;
+  const newLi = document.createElement("li");
+  const toDoValue = document.getElementById("to-do-input").value;
+  const routineValue = document.getElementById("routine-input").value;
 
-  var taskText = document.createTextNode(toDoValue);
-  var routineText = document.createTextNode(routineValue);
+  const taskText = document.createTextNode(toDoValue);
+  const routineText = document.createTextNode(routineValue);
 
 
 
@@ -101,8 +101,8 @@ function newElement() {
 
 
 
-  var span = document.createElement("span");
-  var txt = document.createTextNode("\u00d7");
+  const span = document.createElement("span");
+  const txt = document.createTextNode("\u00d7");
   span.className = "close";
   span.appendChild(txt);
   newLi.appendChild(span);
@@ -110,16 +110,16 @@ function newElement() {
   // delete the item when you click close
   for (i = 0; i < close.length; i++) {
     close[i].onclick = function () {
-      var div = this.parentElement;
+      const div = this.parentElement;
       div.style.display = "none";
 
       // remove item from local storage
-      var deleteItem = div.innerText.slice("0", "-1");
-      var taskArray = localStorage.getItem("to-do").split(",");
-      var taskIndex = taskArray.indexOf(deleteItem);
+      const deleteItem = div.innerText.slice("0", "-1");
+      const taskArray = localStorage.getItem("to-do").split(",");
+      const taskIndex = taskArray.indexOf(deleteItem);
       taskArray.splice(taskIndex, 1);
       console.log(taskArray);
-      var taskString = taskArray.join(",");
+      const taskString = taskArray.join(",");
 
       localStorage.setItem("to-do", taskString);
     };
@@ -127,21 +127,21 @@ function newElement() {
 }
 
 function loadSaved() {
-  var savedTasks = localStorage.getItem("to-do");
-  var savedRoutines = localStorage.getItem("routines");
+  const savedTasks = localStorage.getItem("to-do");
+  const savedRoutines = localStorage.getItem("routines");
 
   if (savedTasks) {
     const savedTasksList = savedTasks.split(",");
 
     for (i = 0; i < savedTasksList.length; i++) {
       // create task
-      var taskLi = document.createElement("li");
+      const taskLi = document.createElement("li");
       taskLi.textContent = savedTasksList[i];
       console.log(taskLi);
 
       // create close btn
-      var span = document.createElement("span");
-      var txt = document.createTextNode("\u00d7");
+      const span = document.createElement("span");
+      const txt = document.createTextNode("\u00d7");
       span.className = "close";
       span.appendChild(txt);
       taskLi.appendChild(span);
@@ -159,16 +159,16 @@ function loadSaved() {
       // delete the item when you click close
       for (let t = 0; t < close.length; t++) {
         close[t].onclick = function () {
-          var div = this.parentElement;
+          const div = this.parentElement;
           div.style.display = "none";
 
           // remove item from local storage
-          var deleteItem = div.innerText.slice("0", "-1");
-          var taskArray = localStorage.getItem("to-do").split(",");
-          var taskIndex = taskArray.indexOf(deleteItem);
+          const deleteItem = div.innerText.slice("0", "-1");
+          const taskArray = localStorage.getItem("to-do").split(",");
+          const taskIndex = taskArray.indexOf(deleteItem);
           taskArray.splice(taskIndex, 1);
           console.log(taskArray);
-          var taskString = taskArray.join(",");
+          const taskString = taskArray.join(",");
 
           localStorage.setItem("to-do", taskString);
         };
@@ -181,13 +181,13 @@ function loadSaved() {
 
     for (i = 0; i < savedRoutinesList.length; i++) {
       // create task
-      var routineLi = document.createElement("li");
+      const routineLi = document.createElement("li");
       routineLi.textContent = savedRoutinesList[i];
       console.log(routineLi);
 
       // create close btn
-      var span = document.createElement("span");
-      var txt = document.createTextNode("\u00d7");
+      const span = document.createElement("span");
+      const txt = document.createTextNode("\u00d7");
       span.className = "close";
       span.appendChild(txt);
       routineLi.appendChild(span);
@@ -205,16 +205,16 @@ function loadSaved() {
       // delete the item when you click close
       for (let t = 0; t < close.length; t++) {
         close[t].onclick = function () {
-          var div = this.parentElement;
+          const div = this.parentElement;
           div.style.display = "none";
 
           // remove item from local storage
-          var deleteItem = div.innerText.slice("0", "-1");
-          var routineArray = localStorage.getItem("routines").split(",");
-          var routineIndex = routineArray.indexOf(deleteItem);
+          const deleteItem = div.innerText.slice("0", "-1");
+          const routineArray = localStorage.getItem("routines").split(",");
+          const routineIndex = routineArray.indexOf(deleteItem);
           routineArray.splice(routineIndex, 1);
           console.log(routineArray);
-          var routineString = routineArray.join(",");
+          const routineString = routineArray.join(",");
 
           localStorage.setItem("routines", routineString);
         };

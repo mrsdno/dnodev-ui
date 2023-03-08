@@ -96,7 +96,7 @@ svg {
 
 /* utility */
 .fun-text {
-  font-family: var(--ff-accent);
+  font-family: const(--ff-accent);
 }
 
 .tiny-text {
@@ -104,11 +104,11 @@ svg {
 }
 
 body {
-  font-family: var(--ff-base);
-  font-weight: var(--fw-regular);
+  font-family: const(--ff-base);
+  font-weight: const(--fw-regular);
   font-size: 0.875rem;
-  color: var(--clr-neurtal-400);
-  background-color: var(--clr-secondary-200);
+  color: const(--clr-neurtal-400);
+  background-color: const(--clr-secondary-200);
   max-width: 1100px;
   margin: auto;
 }
@@ -141,14 +141,14 @@ header .button {
   justify-content: center;
   align-items: center;
   gap: 0.75rem;
-  background-color: var(--clr-primary-400);
-  color: var(--clr-neutral-100);
-  font-weight: var(--fw-bold);
+  background-color: const(--clr-primary-400);
+  color: const(--clr-neutral-100);
+  font-weight: const(--fw-bold);
   font-size: 0.925rem;
 }
 
 .button:is(:hover, :focus) {
-  background-color: var(--clr-primary-500);
+  background-color: const(--clr-primary-500);
 }
 
 @media (max-width: 680px) {
@@ -159,7 +159,7 @@ header .button {
 
 .landing {
   height: 1000px;
-  color: var(--clr-neutral-900);
+  color: const(--clr-neutral-900);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -198,7 +198,7 @@ header .button {
 .person-holder {
   position: relative;
   text-align: center;
-  color: var(--clr-neutral-100);
+  color: const(--clr-neutral-100);
   font-size: 3rem;
 }
 
@@ -231,7 +231,7 @@ header .button {
 
 .project-title {
   font-size: 3rem;
-  color: var(--clr-primary-900);
+  color: const(--clr-primary-900);
   font-weight: 700;
   text-align: center;
   margin: 3rem;
@@ -252,10 +252,10 @@ header .button {
 
 .project a {
   text-decoration: none;
-  color: var(--clr-neutral-100);
+  color: const(--clr-neutral-100);
   font-weight: 900;
 }
 
 .project a:hover {
-  color: var(--clr-neutral-900);
+  color: const(--clr-neutral-900);
 }
