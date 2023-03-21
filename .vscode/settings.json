@@ -1,4 +1,0 @@
-{
-  "appService.defaultWebAppToDeploy": "/subscriptions/acd2d1e5-5054-4ec5-9e2a-16550fabcd17/AppServices/subscriptions/acd2d1e5-5054-4ec5-9e2a-16550fabcd17/resourceGroups/newDnoResourceGroup/providers/Microsoft.Web/sites/dnodev",
-  "appService.deploySubpath": "."
-}

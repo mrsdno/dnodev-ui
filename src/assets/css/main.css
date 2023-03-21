@@ -178,6 +178,8 @@ header .button {
   align-items: center;
   justify-content: center;
   text-align: center;
+  background-color: var(--yellow);
+  border-radius: 40%;
 }
 
 @media (max-width: 1060px) {
