@@ -1,7 +1,13 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
 
-import { usePelotonStore } from '@/stores/peloton';
+import { usePelotonStore } from '../stores/peloton';
+import axios from 'axios';
+import type { AxiosRequestConfig } from 'axios';
+
+type user = {
+    data: any
+}
 
 export default defineComponent({
     setup() {
@@ -12,19 +18,42 @@ export default defineComponent({
         }
     },
     data() {
+        const x: user ={data:{}}
         return {
             username: '',
-            password: ''
-
+            password: '',
+            user: x
         }
     },
     methods: {
-        login() {
-            this.store.loginUser(this.username, this.password)
+        async login() {
+            await axios
+                .post('/api/peloton/login', {
+                    username_or_email: this.username,
+                    password: this.password
+                }).then((userInfo) => {
+                    console.log(userInfo.data.session_id)
+                    this.get_data(userInfo.data)
+                })
+                .catch((error) => {
+                    console.log(error);
+                })
         },
+        
         logout() {
             localStorage.setItem("userInfo", '');
             location.reload();
+        },
+        get_data(userInfo: any) {
+            console.log(userInfo);
+            axios.get(`/api/peloton/user?user_id=${userInfo.user_id}&session_id=${userInfo.session_id}`)
+                .then((response) => {
+                    console.log(response);
+                    this.user = {data: response.data };
+                })
+                .catch((error) => {
+                    console.log(error);
+                })
         }
     }
 })
@@ -37,7 +66,8 @@ export default defineComponent({
         <button>Login</button>
     </form>
 
-    <h1>hi {{ store.userId }}</h1>
+    <h1>hi {{ user.data.username }}</h1>
+    <h2>You are on a {{ user.data.streaks.current_weekly }} week streak.</h2>
 
     <button v-if="store.userId" @click="logout">Logout</button>
 </template>

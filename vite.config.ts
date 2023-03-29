@@ -13,19 +13,11 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      '/auth': {
-        target: 'https://api.onepeloton.com',
-        changeOrigin: true,
-        secure: false,
-        ws: true,
-        rewrite: (path) => path.replace(/^\/app/, '')
-      },
       '/api': {
-        target: 'https://api.onepeloton.com',
+        target: 'http://localhost:3001',
         changeOrigin: true,
         secure: false,
-        ws: true,
-        rewrite: (path) => path.replace(/^\/app/, '')
+        ws: true
       }
     }
   }

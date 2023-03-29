@@ -29,6 +29,7 @@ export const usePelotonStore = defineStore('peloton', {
       console.log('here is more user info')
       console.log(moreUserInfo)
     },
+    
   }
 })
   

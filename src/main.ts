@@ -1,5 +1,6 @@
 import { createApp, watch } from 'vue'
 import { createPinia } from 'pinia'
+import cors from "cors"
 
 import App from './App.vue'
 import router from './router'
@@ -11,5 +12,6 @@ const pinia = createPinia()
 
 app.use(pinia)
 app.use(router)
+ 
 
 app.mount('#app')
